@@ -11,14 +11,18 @@ function TodoForm({ ajouterTache }) {
   };
 
   return (
-    <form onSubmit={soumettreFormulaire}>
+    <form className="todo-form" onSubmit={soumettreFormulaire}>
       <input
+        className="todo-input"
         value={texte}
         onChange={(e) => setTexte(e.target.value)}
         placeholder="Nouvelle tache"
+        aria-label="Nouvelle tache"
         required
       />
-      <button type="submit">Ajouter</button>
+      <button className="primary-button" type="submit">
+        Ajouter
+      </button>
     </form>
   );
 }

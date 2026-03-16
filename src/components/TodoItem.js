@@ -1,25 +1,21 @@
 function TodoItem({ tache, changerEtat, supprimerTache }) {
   return (
-    <li>
+    <li className="todo-item">
       <input
+        className="todo-checkbox"
         type="checkbox"
         checked={tache.terminee}
         onChange={() => changerEtat(tache.id)}
       />
-      <span
-        style={{
-          marginLeft: '8px',
-          textDecoration: tache.terminee ? 'line-through' : 'none',
-        }}
-      >
+      <span className={tache.terminee ? 'todo-text is-done' : 'todo-text'}>
         {tache.texte}
       </span>
       <button
+        className="delete-button"
         type="button"
         onClick={() => supprimerTache(tache.id)}
-        style={{ marginLeft: '8px' }}
       >
-        X
+        Supprimer
       </button>
     </li>
   );
