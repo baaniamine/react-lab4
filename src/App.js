@@ -29,8 +29,6 @@ function App() {
     );
   };
 
-  const totalTerminees = taches.filter((tache) => tache.terminee).length;
-
   return (
     <main className="app-shell">
       <section className="todo-card">
@@ -45,21 +43,6 @@ function App() {
           </div>
           <img className="header-avatar" src="/user.png" alt="Illustration" />
         </header>
-
-        <section className="stats-grid" aria-label="Statistiques de la liste">
-          <article className="stat-card">
-            <span className="stat-label">Total</span>
-            <strong className="stat-value">{taches.length}</strong>
-          </article>
-          <article className="stat-card">
-            <span className="stat-label">Terminees</span>
-            <strong className="stat-value">{totalTerminees}</strong>
-          </article>
-          <article className="stat-card">
-            <span className="stat-label">En cours</span>
-            <strong className="stat-value">{taches.length - totalTerminees}</strong>
-          </article>
-        </section>
 
         <TodoForm ajouterTache={ajouterTache} />
         <TodoList
